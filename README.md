@@ -2,6 +2,8 @@
 
 <p align="center"><img src="docs/mascot.png" width="160" alt="Download Recycler mascot, from the Menubarn widget library"></p>
 
+<p align="center">Part of the <a href="https://widgets.nicksmith.software">Menubarn</a> widget library.</p>
+
 Menu-bar app that moves old files from `~/Downloads` to the **Trash**
 (restorable — `FileManager.trashItem`, never a hard delete). Built on
 [StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit); replaces the
