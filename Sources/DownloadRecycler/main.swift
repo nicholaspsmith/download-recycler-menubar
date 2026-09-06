@@ -8,6 +8,9 @@ import StatusItemKit
 /// while running.
 final class App: NSObject, NSApplicationDelegate {
     private var controller: StatusItemController!
+    /// Gives up this item's width while Curtain reveals its hidden block, so the
+    /// block has room to land; restores itself from the TTL if Curtain vanishes.
+    private var yieldClient: YieldClient!
     private let defaults = UserDefaults.standard
     private let notifier = Notifier()
 
@@ -47,6 +50,8 @@ final class App: NSObject, NSApplicationDelegate {
             onBuildMenu: { [weak self] menu in self?.buildMenu(menu) }
         )
         controller.start()
+        yieldClient = YieldClient(item: controller)
+        yieldClient.start()
     }
 
     /// Every 30 min: sweep if a day has passed since the last one.
