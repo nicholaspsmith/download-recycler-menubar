@@ -53,6 +53,10 @@ defaults delete com.nicholaspsmith.DownloadRecycler
 (Disable Start at Login from the menu first, or remove the entry under
 System Settings ▸ General ▸ Login Items.)
 
+## Why not a SwiftBar plugin?
+
+This is a standalone `.app` built on [StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit), not a script under a plugin host: no SwiftBar to install, a real AppKit menu instead of rendered stdout, event-driven updates instead of a re-run timer, and an icon that keeps its place in the bar. It replaced a shell script plus a daily launchd agent; now the schedule, the Trash-only sweep and Start at Login are one app with no host. The full comparison is in [StatusItemKit's README](https://github.com/nicholaspsmith/StatusItemKit#why-not-swiftbar).
+
 ## The menu-bar suite
 
 Part of a suite of macOS menu-bar apps that share one framework, one
