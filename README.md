@@ -9,8 +9,8 @@ Menu-bar app that moves old files from `~/Downloads` to the **Trash**
 [StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit); replaces the
 old `download_recycler.sh` + daily launchd agent.
 
-- **Green dot** — active: sweeps at launch, then daily while running
-- **Gray dot** — paused
+- **Green recycling triangle** (♻︎) — active: sweeps at launch, then daily while running
+- **Gray recycling triangle** — paused
 
 ## Menu
 

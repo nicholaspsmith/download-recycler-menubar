@@ -3,8 +3,9 @@ import StatusItemKit
 
 /// Menu-bar app that moves old files from ~/Downloads to the Trash
 /// (restorable — uses FileManager.trashItem, not deletion). Replaces the old
-/// download_recycler.sh + daily launchd agent. Green dot = active; gray =
-/// paused. Sweeps at launch and then daily while running.
+/// download_recycler.sh + daily launchd agent. The icon is the recycling
+/// triangle: green = active, gray = paused. Sweeps at launch and then daily
+/// while running.
 final class App: NSObject, NSApplicationDelegate {
     private var controller: StatusItemController!
     private let defaults = UserDefaults.standard
@@ -57,7 +58,7 @@ final class App: NSObject, NSApplicationDelegate {
     }
 
     private func refreshIcon() {
-        controller.setIcon(MeterIcon.dot(color: enabled ? .systemGreen : .systemGray))
+        controller.setIcon(MeterIcon.symbol("arrow.3.trianglepath", color: enabled ? .systemGreen : .systemGray))
     }
 
     /// Move top-level Downloads items older than daysToKeep to the Trash.
