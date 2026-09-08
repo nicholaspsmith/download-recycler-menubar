@@ -63,8 +63,10 @@ final class App: NSObject, NSApplicationDelegate {
     }
 
     private func refreshIcon() {
-        controller.setIcon(MeterIcon.symbol("arrow.3.trianglepath", color: enabled ? .systemGreen : .systemGray))
-    }
+        switch IconStyle.current {
+        case .character: controller.setIcon(CharacterIcon.bin(active: enabled))
+        case .symbol: controller.setIcon(MeterIcon.symbol("arrow.3.trianglepath", color: enabled ? .systemGreen : .systemGray))
+        }    }
 
     /// Move top-level Downloads items older than daysToKeep to the Trash.
     /// Runs on a background queue; file dates via contentModificationDateKey.
@@ -169,6 +171,18 @@ final class App: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
 
+        let iconHeader = NSMenuItem(title: "Icon", action: nil, keyEquivalent: "")
+        let iconSub = NSMenu()
+        for style in IconStyle.allCases {
+            let item = NSMenuItem(title: style.title, action: #selector(pickIconStyle(_:)), keyEquivalent: "")
+            item.target = self
+            item.representedObject = style.rawValue
+            item.state = style == IconStyle.current ? .on : .off
+            iconSub.addItem(item)
+        }
+        iconHeader.submenu = iconSub
+        menu.addItem(iconHeader)
+
         let login = NSMenuItem(title: "Start at Login",
                                action: #selector(toggleLogin), keyEquivalent: "")
         login.target = self
@@ -186,6 +200,23 @@ final class App: NSObject, NSApplicationDelegate {
     @objc private func runNow() { sweep(manual: true) }
     @objc private func setDays(_ sender: NSMenuItem) { daysToKeep = sender.tag }
     @objc private func openLog() { NSWorkspace.shared.open(logURL) }
+    /// The bin mascot or the plain symbol. Persisted.
+    enum IconStyle: String, CaseIterable {
+        case character, symbol
+        var title: String { self == .character ? "Bin" : "Symbol" }
+        private static let key = "iconStyle"
+        static var current: IconStyle {
+            get { UserDefaults.standard.string(forKey: key).flatMap(IconStyle.init) ?? .character }
+            set { UserDefaults.standard.set(newValue.rawValue, forKey: key) }
+        }
+    }
+
+    @objc private func pickIconStyle(_ sender: NSMenuItem) {
+        guard let raw = sender.representedObject as? String, let style = IconStyle(rawValue: raw) else { return }
+        IconStyle.current = style
+        refreshIcon()
+    }
+
     @objc private func toggleLogin() { LoginItem.toggle() }
 }
 
