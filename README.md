@@ -6,8 +6,7 @@
 
 Menu-bar app that moves old files from `~/Downloads` to the **Trash**
 (restorable — `FileManager.trashItem`, never a hard delete). Built on
-[StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit); replaces the
-old `download_recycler.sh` + daily launchd agent.
+[StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit).
 
 ![The menu-bar icon](docs/menubar-icon.png)
 
@@ -44,9 +43,7 @@ cd download-recycler-menubar
 ./install.sh
 ```
 
-`install.sh` builds the app, symlinks it into `~/Applications`, migrates the
-retention setting from the legacy `download_recycler.conf` if present, retires
-the legacy `com.user.downloadrecycler` launchd agent, and launches the app.
+`install.sh` builds the app, symlinks it into `~/Applications`, and launches it.
 
 ## Uninstall
 
