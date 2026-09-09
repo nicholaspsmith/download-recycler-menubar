@@ -9,8 +9,12 @@ Menu-bar app that moves old files from `~/Downloads` to the **Trash**
 [StatusItemKit](https://github.com/nicholaspsmith/StatusItemKit); replaces the
 old `download_recycler.sh` + daily launchd agent.
 
-- **Green recycling triangle** (♻︎) — active: sweeps at launch, then daily while running
-- **Gray recycling triangle** — paused
+![The menu-bar icon](docs/menubar-icon.png)
+
+- **Green bin with a little guy peeking out** — active: sweeps at launch, then daily while running
+- **Grey, empty bin** — paused
+
+Prefer the recycling symbol (♻︎)? **menu ▸ Icon ▸ Symbol**.
 
 ## Menu
 
@@ -71,7 +75,7 @@ colour, and cooperative hiding so no icon strands another.
 | [Claude Usage](https://github.com/nicholaspsmith/claude-usage-menubar) | Claude Code plan limits, resets, and live agent sessions |
 | [Apollo Monitor](https://github.com/nicholaspsmith/apollo-monitor-menubar) | Universal Audio Apollo monitor level, plus a UA process watchdog |
 | [Battery Time](https://github.com/nicholaspsmith/battery-time-menubar) | Time remaining, power mode, and 24h usage |
-| [VPN & DNS](https://github.com/nicholaspsmith/vpn-dns-menubar) | One dot for Mullvad + Tailscale state, with a DNS watcher |
+| [VPN & DNS](https://github.com/nicholaspsmith/vpn-dns-menubar) | A chameleon for Mullvad + Tailscale state, with a DNS watcher |
 | [Process Monitor](https://github.com/nicholaspsmith/MacOS_Process_Monitor) | Process-count sparkline against the per-UID limit |
 | [KeyLight](https://github.com/nicholaspsmith/keylight-menubar) | Ctrl+brightness keys remapped to keyboard backlight |
 | [MacRecorder](https://github.com/nicholaspsmith/MacRecorder) | Screen recording with system audio |
