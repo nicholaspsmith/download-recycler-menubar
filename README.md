@@ -10,8 +10,8 @@ Menu-bar app that moves old files from `~/Downloads` to the **Trash**
 
 ![The menu-bar icon](docs/menubar-icon.png)
 
-- **Green bin with a little guy peeking out** — active: sweeps at launch, then daily while running
-- **Grey, empty bin** — paused
+- **Green wheelie bin, awake, broom in hand** — active: sweeps at launch, then daily while running
+- **Grey bin, asleep, broom propped against it** — paused
 
 Prefer the recycling symbol (♻︎)? **menu ▸ Icon ▸ Symbol**.
 
