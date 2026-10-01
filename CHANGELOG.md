@@ -8,6 +8,10 @@ without one is refused (`[no release]` in the tip commit is the only exception).
 Versions follow [Semantic Versioning](https://semver.org/). The full rule:
 [StatusItemKit — Releases](https://github.com/nicholaspsmith/StatusItemKit#releases-every-push-is-one).
 
+## [1.0.4] - 2026-10-01
+
+- Merged into Mac Daddy (github.com/nicholaspsmith/mac-daddy-menubar); this is the last release
+
 ## [1.0.3] - 2026-09-28
 
 - New menu-bar icon: a green wheelie bin with a broom, asleep and grey when paused
